@@ -7,115 +7,9 @@ body{
   padding: 5px;
   background-color: white;
   color: rgba(0, 0, 0, 0.49);
-}
-/*pop up form*/
-
-.popup-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      padding: 15px 20px;
-    }
-       input::placeholder {
-       color: black;
-      }
-       textarea::placeholder {
-       color: black;
-      }
-    .popup-form {
-      
-      background-image:linear-gradient(to right, rgb(204, 235, 247),rgb(41, 134, 171));
-      padding: 18px;
-      max-width: 400px;
-      width: 100%;
-      border-radius: 12px;
-      position: relative;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      color:  rgb(3, 3, 57);
+  font-family:'Times New Roman', Times, serif;
   
-    }
-
-    .popup-form h2 {
-      margin-top: 0;
-      text-align: center;
-      color: (3, 3, 57);
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
-
-    
-    .popup-form input,
-    .popup-form textarea,select {
-      width: 100%;
-      padding: 10px;
-      margin-top: 6px;
-      border: 2px solid  (3, 3, 57);
-      border-radius: 6px;
-      font-size: 15px;
-      resize: none;
-      
-    }
-.popup-form textarea {
-  height: 80px;
 }
-    .popup-form button {
-      width: 100%;
-      padding: 10px;
-      background-color: white;
-      color: black;
-      border: none;
-      border-radius: 8px;
-      font-size: 15px;
-      margin-top: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .popup-form button:hover {
-      background-color:  rgb(0, 78, 188);
-      color: white;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 12px;
-      right: 15px;
-      font-size: 24px;
-      font-weight: bolder;
-      cursor: pointer;
-      color: (3, 3, 57);
-    }
-
-    .close-btn:hover {
-      color: #000;
-    }
-
-
-    /* Responsive tweaks */
-    @media (max-width: 500px) {
-      .popup-form {
-        padding: 15px;
-      }
-      
-      .popup-form h2 {
-        font-size: 16px;
-      }
-      
-  .popup-form input,
-  .popup-form textarea,select {
-    font-size: 12px;
-    padding: 7px;
-  }
-
-  .popup-form button {
-    padding: 9px;
-    font-size: 14px;
-  }
-    }
 
 a#products:visited,a#products:link{
   color: rgb(2, 2, 44);
@@ -285,7 +179,7 @@ a#products:hover{
   }
 
   .v2-v1 h1 {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 15px;
     color:black;
   }
@@ -789,83 +683,120 @@ a#products:hover{
 }
 
 /*how it works*/
+/* SECTION WITH BACKGROUND IMAGE */
+.background-image {
+  position: relative;
+  background-image: url('CBR7.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
 
-    .how-it-works {
-      padding: 60px 20px;
-      text-align: center;
-      background-image:linear-gradient(to right,rgb(133, 133, 249),skyblue);
-      color: black;
-    }
+/* DARK OVERLAY FOR READABILITY */
+.text-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 40px 20px;
+  border-radius: 12px;
+  max-width: auto;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
-    .how-it-works h2 {
-      font-size: 36px;
-      margin-bottom: 50px;
-      color: black; /* Custom brand color */
-    }
+/* HEADER TEXT */
+.text-overlay h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
 
-    .steps-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 40px;
-      position: relative;
-    }
+/* STEPS LAYOUT */
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
 
-    .step {
-      background:white;
-      border-radius: 25px 40px;
-      padding: 25px 15px;
-      width: 180px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-      animation: fadeInUp 0.6s ease forwards;
-      opacity: 0;
-    }
+/* INDIVIDUAL STEP */
+.step {
+  background-color: rgba(255, 255, 255, 0.1); /* Optional card style */
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
 
-    .step:nth-child(1) { animation-delay: 0s; }
-    .step:nth-child(2) { animation-delay: 0.2s; }
-    .step:nth-child(3) { animation-delay: 0.4s; }
-    .step:nth-child(4) { animation-delay: 0.6s; }
-    .step:nth-child(5) { animation-delay: 0.8s; }
+/* ICON */
+.step i {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #fff;
+}
 
-    .step i {
-      font-size: 34px;
-      color: rgb(0, 0, 69) ;
-      margin-bottom: 15px;
-    }
+/* HEADINGS AND TEXT */
+.step h1 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
 
-    .step p {
-      font-size: 18px;
-      line-height: 1.5;
-      color: rgb(0, 0, 69) ;
-    }
+.step p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
-    .step .highlight {
-      font-weight: bold;
-      color: #d44b4b;
-    }
+/* FADE-IN ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .text-overlay h2 {
+    font-size: 2rem;
+  }
+  .step {
+    width: 220px;
+  }
+}
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .step {
+    width: 90%;
+  }
+  .text-overlay h2 {
+    font-size: 1.8rem;
+  }
+}
 
-    @media (max-width: 768px) {
-      .steps-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .step {
-        width: 90%;
-      }
-    }
+@media (max-width: 480px) {
+  .text-overlay {
+    padding: 20px 10px;
+  }
+  .step h1 {
+    font-size: 1rem;
+  }
+  .step p {
+    font-size: 0.9rem;
+  }
+}
 
 /*quote book consultation on home page*/
 /* Add to style.css */

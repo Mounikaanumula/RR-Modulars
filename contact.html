@@ -216,7 +216,7 @@
 <div id="map-section">
     <div class="form-card">
       <h2 style="text-align: center;">We’d Love to Hear from You</h2>
-      <form id="contactForm" action="https://formspree.io/f/xrbkedaw" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/meozrnej" method="POST">
         <div class="form-group">
           
           <div class="radio-group">
@@ -365,16 +365,24 @@
       headers: {
         'Accept': 'application/json'
       }
-    });
+    })
 
-    if (response.ok) {
-      form.reset(); // clear the form
-      successMessage.style.display = 'block'; // show message
-    } else {
-      successMessage.style.color = 'red';
-      successMessage.innerText = '❌ Submission failed. Please try again.';
-      successMessage.style.display = 'block';
-    }
+   .then(response => {
+      if (response.ok) {
+        // Optional: show success message
+        form.innerHTML = "<p style='text-align:center; color:green;'>Thank you! For Contacting RR Modular.<br>We appreciate your interest in RR Modular.Our team will review your request and get back to you as soon as possible.</p>";
+        
+        // Auto-close after 2 seconds
+        setTimeout(() => {
+          closePopup();
+        }, 4000);
+      } else {
+        alert("Oops! Something went wrong.");
+      }
+    })
+    .catch(error => {
+      alert("Oops! Submission failed.");
+    });
   });
 </script>
 <script src="script.js"></script>
